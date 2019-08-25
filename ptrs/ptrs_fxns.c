@@ -50,13 +50,37 @@ void test(){
     pMyStruct = fxn(4);
     assert(pMyStruct == &mystruct4); 
 
+}
 
+int f1(struct Mystruct *pStruct, int i, long *lp){
+    return i;
+}
 
-    assert(1==1);
-    printf("passed tests\n");
+int f2(struct Mystruct *pStruct, int *mValue){
+    int j;
+    long array[25];
+    long *pAA;
+     
+    pAA = &array[13];
+    j = f1( pStruct, *mValue, pAA );
+    return j;
+}
+
+void test_f1_f2(){
+    struct Mystruct astruct;
+    struct Mystruct *pastruct = &astruct;
+    int mvalue = 1;
+    // dont forget the *******
+    int *pmvalue= &mvalue;
+    int f = f2(pastruct, pmvalue);
+    assert(f==1);
 }
 
 int main(){  
    test();
+   test_malloc_fxn();
+   test_f1_f2();
+
+   printf("passed tests\n");
    return 0;
 }

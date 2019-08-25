@@ -87,7 +87,7 @@ void inc_dec(){
   }
   assert(array[0]==0);
   assert(array[9]==5);
-} 
+}
 
 int main(){  
    test();

@@ -20,7 +20,7 @@ struct Dog
     enum colour colour_coat;
 };
 
-struct Cat{
+struct Cat{ 
    char *name;
    char *breed;
 };
